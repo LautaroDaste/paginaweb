@@ -1,0 +1,26 @@
+<div class="container" style="margin:150px">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <h4>Modificar el evento</h4>
+            <form action="/admin/eventos/modificar" method="post">
+            <input type="hidden" value="{{evento.id}}" name="id">
+            <div class="form-group">
+                <label for="">Titulo</label>
+                <input type="text" class="form-control" name="titulo" value="{{evento.titulo}}">
+            </div>
+            <div class="form-group">
+                <label for="">Subtitulo</label>
+                <input type="text" class="form-control" name="subtitulo" value="{{evento.subtitulo}}">
+            </div>
+            <div class="form-group">
+                <label for="">Cuerpo</label>
+                <input type="text" class="form-control" name="cuerpo" value="{{evento.cuerpo}}">
+            </div>
+            <button type="submit" class="btn btn-primary">Modificar</button>
+            </form>
+            {{#if error}}
+            <p>{{message}}</p>
+            {{/if}}
+        </div>
+    </div>
+</div>
