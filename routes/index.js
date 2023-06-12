@@ -1,14 +1,10 @@
 var express = require('express');
 var router = express.Router();
 var nodemailer = require('nodemailer');
-var eventosModel = require('../models/eventosModel');
 
 /* GET home page. */
-router.get('/', async function (req, res, next) {
-
-var eventos = await eventosModel.getEventos()
-
-  res.render('index', {eventos});
+router.get('/', function (req, res, next) {
+  res.render('index', { title: 'Express' });
 });
 
 router.post('/', async (req, res, next) => {
