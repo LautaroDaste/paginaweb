@@ -57,13 +57,11 @@ router.get('/agregar', (req, res, next)=> {
 
 router.post('/agregar', async (req, res, next)=>{
   try {
-
     var img_id='';
     if (req.files && Object.keys(req.files).length > 0) {
       imagen = req.files.imagen;
       img_id = (await uploader(imagen.tempFilePath)).public_id;
     }
-
     if(req.body.titulo != "" && req.body.subtitulo !="" && req.body.cuerpo !=""){
       await eventosModel.insertEvento({
         ...req.body,
@@ -114,12 +112,12 @@ router.post('/modificar', async (req, res, next)=> {
 if (borrar_img_vieja && req.body.img_original) {
   await (destroy(req.body.img_original));
 }
-
     console.log(req.body.id);
     var obj = {
 titulo: req.body.titulo,
 subtitulo: req.body.subtitulo,
-cuerpo: req.body.cuerpo
+cuerpo: req.body.cuerpo,
+img_id
     }
     console.log(obj)
     await eventosModel.modificarEventosById(obj, req.body.id);

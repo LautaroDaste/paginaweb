@@ -1,10 +1,34 @@
 var express = require('express');
 var router = express.Router();
 var nodemailer = require('nodemailer');
+var eventosModel = require('../models/eventosModel');
+var cloudinary = require('cloudinary').v2;
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Express' });
+router.get('/', async function (req, res, next) {
+
+var eventos = await eventosModel.getEventos()
+
+eventos = eventos.splice(0, 5);
+eventos = eventos.map(evento => {
+  if (evento.img_id) {
+    const imagen = cloudinary.url(evento.img_id, {
+      width: 460,
+      crop: 'fill'
+    });
+    return {
+      ...evento,
+      imagen
+    }
+  } else {
+    return {
+      ...evento,
+      imagen: ''
+    }
+  }
+});
+
+  res.render('index', {eventos});
 });
 
 router.post('/', async (req, res, next) => {

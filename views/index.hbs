@@ -219,15 +219,19 @@
         molestias, ratione architecto dolore nesciunt nostrum praesentium enim error esse aperiam ad optio possimus
         obcaecati! Laborum.
     </p>
+    {{#each eventos}}
+        <h2>{{titulo}}</h1>
+         <img src="{{imagen}}">
+        <h4>{{subtitulo}}</h4>
+        <p>{{cuerpo}}</p>
+        {{/each}}
 </div>
-
 <div class="container-fluid scroll_section" id="Arancelados">
     <p class="textleft nombre">Arancelados</p>
     <p class="textleft">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia, qui cupiditate aliquam
         doloribus explicabo, adipisci perspiciatis recusandae temporibus quisquam possimus nostrum ullam facilis
         voluptates culpa incidunt dolorem, nihil iure tempore!</p>
 </div>
-
 
 <div class="container-fluid scroll_section" id="contacto">
 
@@ -246,11 +250,11 @@
         </div>
         <input id=enviar class="btn btn-primary" type="submit" value="Enviar">
         <p>{{message}}</p>
-        </form>
-<div class="mapa col">
-    <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6576.036536556303!2d-58.57093157696838!3d-34.502421137770085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcba8d9345413b%3A0x2989e7d99aa9d0a0!2sGral.%20Hilario%20Lagos%202064%2C%20B1609GWP%20Boulogne%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1679865418761!5m2!1ses-419!2sar">
-    </iframe>
+    </form>
+    <div class="mapa col">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6576.036536556303!2d-58.57093157696838!3d-34.502421137770085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcba8d9345413b%3A0x2989e7d99aa9d0a0!2sGral.%20Hilario%20Lagos%202064%2C%20B1609GWP%20Boulogne%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1679865418761!5m2!1ses-419!2sar">
+        </iframe>
 
-</div>
+    </div>
 </div>
